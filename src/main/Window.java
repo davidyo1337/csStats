@@ -12,9 +12,9 @@ public class Window extends JFrame{
 	private JPanel panel;
 	
 	public Window() {
-		super("krasses Programm");
+		super("Cs Stats auslesen");
 		panel = new JPanel();
-		panel.setPreferredSize(new Dimension(700, 500));
+		panel.setPreferredSize(new Dimension(1080, 720));
 		panel.setBackground(Color.WHITE);
 		panel.setLayout(null);
 		add(panel);
