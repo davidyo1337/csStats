@@ -33,4 +33,13 @@ public class FileReader {
 
 	}
 
+	public static ArrayList<String> readAndDeleteFile(String path) {
+		ArrayList<String> tmp = readFile(path);
+		File empty = new File(path);
+		empty.delete();
+		return tmp;
+		
+	}
+	
+	
 }
