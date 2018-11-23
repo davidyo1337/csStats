@@ -30,7 +30,6 @@ public class Window extends JFrame {
 	private JPanel infoPanel;
 	private JButton cheaterButton;
 	private JButton suspectButton;
-	
 
 	public Window() {
 		super("CS:GO Stats auslesen");
@@ -68,7 +67,7 @@ public class Window extends JFrame {
 		suspectButton = new JButton("suspected");
 		suspectButton.setBounds(210, 480, 150, 30);
 		infoPanel.add(suspectButton);
-		
+
 		setResizable(false);
 		pack();
 		setLocationRelativeTo(null);

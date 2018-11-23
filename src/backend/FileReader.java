@@ -38,8 +38,7 @@ public class FileReader {
 		File empty = new File(path);
 		empty.delete();
 		return tmp;
-		
+
 	}
-	
-	
+
 }

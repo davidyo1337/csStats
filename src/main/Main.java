@@ -1,10 +1,12 @@
 package main;
 
 import java.math.BigInteger;
+
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import backend.FileReader;
+import backend.WriteFile;
 
 public class Main {
 
@@ -16,6 +18,7 @@ public class Main {
 			e.printStackTrace();
 		}
 		new Window();
+		WriteFile.pathChooser();
 
 		System.out.println(FileReader.readFile(
 				"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Counter-Strike Global Offensive\\csgo\\test1.txt"));
