@@ -2,24 +2,39 @@ package main;
 
 import java.math.BigInteger;
 
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
+
 public class Main {
-	
+
 	public static void main(String[] args) {
+		try {
+			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
+				| UnsupportedLookAndFeelException e) {
+			e.printStackTrace();
+		}
 		new Window();
 		System.out.println(calculateID("STEAM_0:0:125314026"));
 	}
+<<<<<<< HEAD
 	
 	 //CREATED BY MARKUS (PO-)SCHLITZ
 	
 	public static String calculateID(String steamid)
 	{
+=======
+
+	public static String calculateID(String steamid) {
+>>>>>>> branch 'master' of https://github.com/davidyo1337/csStats
 		String[] id_split = steamid.split(":");
-			   BigInteger steam64id = new BigInteger("76561197960265728").add(new BigInteger("" + (Integer.parseInt(id_split[2]) * 2))) ;
-			   steam64id  = steam64id.add(new BigInteger("" + id_split[1]));
-			   
-			    return steam64id.toString();
+		BigInteger steam64id = new BigInteger("76561197960265728")
+				.add(new BigInteger("" + (Integer.parseInt(id_split[2]) * 2)));
+		steam64id = steam64id.add(new BigInteger("" + id_split[1]));
+
+		return steam64id.toString();
 	}
-	
+
 }
 
 /*
