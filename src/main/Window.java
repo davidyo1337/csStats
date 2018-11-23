@@ -6,8 +6,6 @@ import java.awt.Dimension;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import javax.swing.UIManager;
-import javax.swing.UnsupportedLookAndFeelException;
 
 public class Window extends JFrame{
 	
@@ -17,9 +15,9 @@ public class Window extends JFrame{
 	private JButton button;
 	
 	public Window() {
-		super("krasses Programm");
+		super("Cs Stats auslesen");
 		panel = new JPanel();
-		panel.setPreferredSize(new Dimension(700, 500));
+		panel.setPreferredSize(new Dimension(1080, 720));
 		panel.setBackground(Color.WHITE);
 		panel.setLayout(null);
 		
@@ -34,16 +32,13 @@ public class Window extends JFrame{
 		setDefaultCloseOperation(3);
 		setVisible(true);
 		
+		/*
+		 *  steamID STEAM_0:0:142231653
+			steamID3 [U:1:284463306]
+ 			steamID 76561198244729034
+ 			
+ 			API KEY 648011BEFF8552A866AAE3F2D64D3AFD
+		 */
 		
-	}
-	
-	public static void main(String[] args) {
-		new Window();
-		try {
-			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
-				| UnsupportedLookAndFeelException e) {
-			e.printStackTrace();
-		}
 	}
 }
