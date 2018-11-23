@@ -6,6 +6,7 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import backend.FileReader;
+import backend.WriteFile;
 
 public class Main {
 
@@ -16,14 +17,17 @@ public class Main {
 				| UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
-		Window window = new Window();
+		
 
 		String cssavePath = FileReader.getCSsave();
 		if (cssavePath == null) {
-			cssavePath = FileChooser.showPathChooser(window);
+			cssavePath = FileChooser.showPathChooser(null);
 		}
-
-		System.out.println(FileReader.readFile(cssavePath));
+		WriteFile.safeCsgoPath(cssavePath);
+		System.out.println(cssavePath);
+		
+		new Window();
+//		System.out.println(FileReader.decodeFile(cssavePath));
 
 	}
 

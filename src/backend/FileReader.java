@@ -10,13 +10,36 @@ public class FileReader {
 	public FileReader() {
 
 	}
-	
+
 	public static String getCSsave() {
-		//null, wenn kein Speicherstand existiert
-		return null;
+		File file = new File(System.getenv("APPDATA") + "/csStats/csStats.txt");
+		if (!file.exists()) {
+			return null;
+		} else {
+			return readFile(file).get(0);
+		}
 	}
 
-	public static ArrayList<String> readFile(String path) {
+	private static ArrayList<String> readFile(File file) {
+		ArrayList<String> outp = new ArrayList<>();
+		Scanner sc;
+		try {
+			sc = new Scanner(file);
+			while (sc.hasNext()) {
+				outp.add(sc.nextLine());
+			}
+			sc.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		}
+		if (outp.size() == 0) {
+			return null;
+		} else {
+			return outp;
+		}
+	}
+
+	public static ArrayList<String> decodeFile(String path) {
 		ArrayList<String> lines = new ArrayList<>();
 		try {
 			Scanner sc = new Scanner(new File(path));
@@ -39,7 +62,7 @@ public class FileReader {
 	}
 
 	public static ArrayList<String> readAndDeleteFile(String path) {
-		ArrayList<String> tmp = readFile(path);
+		ArrayList<String> tmp = decodeFile(path);
 		File empty = new File(path);
 		empty.delete();
 		return tmp;

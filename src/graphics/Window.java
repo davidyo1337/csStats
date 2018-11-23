@@ -80,7 +80,5 @@ public class Window extends JFrame {
 		 * 
 		 * API KEY 648011BEFF8552A866AAE3F2D64D3AFD
 		 */
-
-		setVisible(true);
 	}
 }
