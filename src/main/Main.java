@@ -5,9 +5,10 @@ import java.math.BigInteger;
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
-public class Main {
-
-	public static void main(String[] args) {
+public class Main 
+{
+	public static void main(String[] args) 
+	{
 		try {
 			UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 		} catch (ClassNotFoundException | InstantiationException | IllegalAccessException
@@ -15,18 +16,13 @@ public class Main {
 			e.printStackTrace();
 		}
 		new Window();
-		System.out.println(calculateID("STEAM_0:0:125314026"));
+//		System.out.println(calculateID("STEAM_0:0:125314026"));
 	}
-<<<<<<< HEAD
 	
-	 //CREATED BY MARKUS (PO-)SCHLITZ
-	
-	public static String calculateID(String steamid)
-	{
-=======
+//		CREATED BY MARKUS (PO-)SCHLITZ
 
-	public static String calculateID(String steamid) {
->>>>>>> branch 'master' of https://github.com/davidyo1337/csStats
+	public static String calculateID(String steamid) 
+	{
 		String[] id_split = steamid.split(":");
 		BigInteger steam64id = new BigInteger("76561197960265728")
 				.add(new BigInteger("" + (Integer.parseInt(id_split[2]) * 2)));
