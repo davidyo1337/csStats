@@ -17,16 +17,8 @@ public class Main {
 		new Window();
 		System.out.println(calculateID("STEAM_0:0:125314026"));
 	}
-<<<<<<< HEAD
-	
-	 //CREATED BY MARKUS (PO-)SCHLITZ
-	
-	public static String calculateID(String steamid)
-	{
-=======
 
 	public static String calculateID(String steamid) {
->>>>>>> branch 'master' of https://github.com/davidyo1337/csStats
 		String[] id_split = steamid.split(":");
 		BigInteger steam64id = new BigInteger("76561197960265728")
 				.add(new BigInteger("" + (Integer.parseInt(id_split[2]) * 2)));
@@ -38,9 +30,8 @@ public class Main {
 }
 
 /*
- *  steamID STEAM_0:0:142231653
-	steamID3 [U:1:284463306]
-		steamID 76561198244729034
-		
-		API KEY 648011BEFF8552A866AAE3F2D64D3AFD
+ * steamID STEAM_0:0:142231653 steamID3 [U:1:284463306] steamID
+ * 76561198244729034
+ * 
+ * API KEY 648011BEFF8552A866AAE3F2D64D3AFD
  */

@@ -22,7 +22,6 @@ public class Window extends JFrame {
 
 	private JButton button;
 
-	// 1080 720
 	public Window() {
 		super("CS:GO Stats auslesen");
 		searchPanel = new JPanel();
@@ -53,26 +52,5 @@ public class Window extends JFrame {
 		setLocationRelativeTo(null);
 		setDefaultCloseOperation(3);
 		setVisible(true);
-<<<<<<< HEAD
-
-	}
-
-
-=======
-
->>>>>>> branch 'master' of https://github.com/davidyo1337/csStats
-		/*
-		 * steamID STEAM_0:0:142231653 steamID3 [U:1:284463306] steamID
-		 * 76561198244729034
-		 * 
-		 * API KEY 648011BEFF8552A866AAE3F2D64D3AFD
-		 */
-<<<<<<< HEAD
-		
-	}
-
-=======
-
 	}
 }
->>>>>>> branch 'master' of https://github.com/davidyo1337/csStats
