@@ -13,14 +13,7 @@ public class WriteFile {
 
 	}
 
-	public static void pathChooser() {
-		JFileChooser pc = new JFileChooser();
-		pc.showOpenDialog(null);
-		pc.setDialogTitle("Pfad auswählen");
-		String sf = pc.getSelectedFile().getAbsolutePath();
-		System.out.println(sf);
-		safeCsgoPath(sf);
-	}
+	
 
 	public static void safeCsgoPath(String csgoPath) {
 

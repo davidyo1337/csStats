@@ -1,4 +1,4 @@
-package main;
+package graphics;
 
 import java.math.BigInteger;
 
@@ -6,7 +6,6 @@ import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
 import backend.FileReader;
-import backend.WriteFile;
 
 public class Main {
 
@@ -17,13 +16,15 @@ public class Main {
 				| UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
-		new Window();
-		WriteFile.pathChooser();
+		Window window = new Window();
 
-		System.out.println(FileReader.readFile(
-				"C:\\Program Files (x86)\\Steam\\steamapps\\common\\Counter-Strike Global Offensive\\csgo\\test1.txt"));
+		String cssavePath = FileReader.getCSsave();
+		if (cssavePath == null) {
+			cssavePath = FileChooser.showPathChooser(window);
+		}
 
-		// System.out.println(calculateID("STEAM_0:0:125314026"));
+		System.out.println(FileReader.readFile(cssavePath));
+
 	}
 
 	public static String calculateID(String steamid) {

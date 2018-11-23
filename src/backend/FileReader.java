@@ -10,6 +10,11 @@ public class FileReader {
 	public FileReader() {
 
 	}
+	
+	public static String getCSsave() {
+		//null, wenn kein Speicherstand existiert
+		return null;
+	}
 
 	public static ArrayList<String> readFile(String path) {
 		ArrayList<String> lines = new ArrayList<>();
