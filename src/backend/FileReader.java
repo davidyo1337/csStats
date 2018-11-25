@@ -2,6 +2,7 @@ package backend;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -88,6 +89,16 @@ public class FileReader {
 		
 		return output;
 	}
+	
+	public static ArrayList<String> getListofCalculatedIDs(ArrayList<String> rawIDList){
+		ArrayList<String> output = new ArrayList<>();
+		
+		for(String line : rawIDList) {
+			output.add(calculateID(line));
+		}
+		
+		return output;
+	}
 
 	public static ArrayList<String> readAndDeleteFile(String path) {
 		ArrayList<String> tmp = decodeFile(path);
@@ -95,6 +106,15 @@ public class FileReader {
 		empty.delete();
 		return tmp;
 
+	}
+	
+	public static String calculateID(String steamid) {
+		String[] id_split = steamid.split(":");
+		BigInteger steam64id = new BigInteger("76561197960265728")
+				.add(new BigInteger("" + (Integer.parseInt(id_split[2]) * 2)));
+		steam64id = steam64id.add(new BigInteger("" + id_split[1]));
+
+		return steam64id.toString();
 	}
 
 }
