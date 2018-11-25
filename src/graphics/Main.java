@@ -17,7 +17,6 @@ public class Main {
 				| UnsupportedLookAndFeelException e) {
 			e.printStackTrace();
 		}
-		
 
 		String cssavePath = FileReader.getCSsave();
 		if (cssavePath == null) {
@@ -25,11 +24,12 @@ public class Main {
 		}
 		WriteFile.safeCsgoPath(cssavePath);
 		System.out.println(cssavePath);
-		
+
 		new Window();
-		System.out.println(FileReader.decodeFile(cssavePath));
-		System.out.println("");
-		
+
+		System.out.println(FileReader.getListOfSteamIDs(FileReader.decodeFile(cssavePath)));
+		System.out.println(" ");
+		System.out.println(FileReader.getListofCalculatedIDs(FileReader.getListOfSteamIDs(FileReader.decodeFile(cssavePath))));
 
 	}
 
@@ -37,8 +37,6 @@ public class Main {
 }
 
 /*
- * steamID STEAM_0:0:142231653 
- * steamID3 [U:1:284463306] 
- * steamID 76561198244729034
- * API KEY 648011BEFF8552A866AAE3F2D64D3AFD
+ * steamID STEAM_0:0:142231653 steamID3 [U:1:284463306] steamID64
+ * 76561198244729034 API KEY 648011BEFF8552A866AAE3F2D64D3AFD
  */
