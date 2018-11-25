@@ -60,32 +60,31 @@ public class FileReader {
 		return lines;
 
 	}
-	
-	public static String getSteamID(String playerLine){
-		
+
+	public static String getSteamID(String playerLine) {
+
 		String[] parts = playerLine.split(" ");
 		ArrayList<String> possibleIDs = new ArrayList<>();
-		
-		for(String part : parts) {
-			if(part.startsWith("STEAM_"))
+
+		for (String part : parts) {
+			if (part.startsWith("STEAM_"))
 				possibleIDs.add(part);
 		}
 
-		if(!possibleIDs.isEmpty())
+		if (!possibleIDs.isEmpty())
 			return possibleIDs.get(possibleIDs.size() - 1);
-		else			
+		else
 			return null;
 	}
-	
-	public static ArrayList<String> getListOfSteamIDs(ArrayList<String> rawList){
-		
+
+	public static ArrayList<String> getListOfSteamIDs(ArrayList<String> rawList) {
+
 		ArrayList<String> output = new ArrayList<>();
-		
-		for(String line : rawList) {
+
+		for (String line : rawList) {
 			output.add(getSteamID(line));
 		}
-		
-		
+
 		return output;
 	}
 
