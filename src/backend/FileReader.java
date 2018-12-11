@@ -88,14 +88,14 @@ public class FileReader {
 
 		return output;
 	}
-	
-	public static ArrayList<String> getListofCalculatedIDs(ArrayList<String> rawIDList){
+
+	public static ArrayList<String> getListofCalculatedIDs(ArrayList<String> list) {
 		ArrayList<String> output = new ArrayList<>();
-		
-		for(String line : rawIDList) {
+
+		for (String line : list) {
 			output.add(calculateID(line));
 		}
-		
+
 		return output;
 	}
 
@@ -106,7 +106,7 @@ public class FileReader {
 		return tmp;
 
 	}
-	
+
 	public static String calculateID(String steamid) {
 		String[] id_split = steamid.split(":");
 		BigInteger steam64id = new BigInteger("76561197960265728")

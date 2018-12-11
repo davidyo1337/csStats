@@ -25,15 +25,15 @@ public class WriteFile {
 		}
 	}
 
-	public static void saveData() {
-		try {
-			File dataBase = new File(System.getenv("APPDATA") + "\\CsStats\\DataBase.txt");
-			FileWriter dbw = new FileWriter(dataBase);
-			BufferedWriter dbbw = new BufferedWriter(dbw);
-//			dbbw.write();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	}
+	// public static void saveData() {
+	// try {
+	// File dataBase = new File(System.getenv("APPDATA") +
+	// "\\CsStats\\DataBase.txt");
+	// FileWriter dbw = new FileWriter(dataBase);
+	// BufferedWriter dbbw = new BufferedWriter(dbw);
+	// } catch (IOException e) {
+	// e.printStackTrace();
+	// }
+	// }
 
 }

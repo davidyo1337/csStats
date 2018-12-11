@@ -1,7 +1,5 @@
 package graphics;
 
-
-
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -27,13 +25,14 @@ public class Main {
 
 		new Window();
 
+		System.out.println(FileReader.decodeFile(cssavePath));
 		System.out.println(FileReader.getListOfSteamIDs(FileReader.decodeFile(cssavePath)));
 		System.out.println(" ");
-		System.out.println(FileReader.getListofCalculatedIDs(FileReader.getListOfSteamIDs(FileReader.decodeFile(cssavePath))));
+		System.out.println(
+				FileReader.getListofCalculatedIDs(FileReader.getListOfSteamIDs(FileReader.decodeFile(cssavePath))));
 
 	}
 
-	
 }
 
 /*
