@@ -2,7 +2,6 @@ package graphics;
 
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
-
 import backend.FileReader;
 import backend.WriteFile;
 
@@ -21,9 +20,9 @@ public class Main {
 			cssavePath = FileChooser.showPathChooser(null);
 		}
 		WriteFile.safeCsgoPath(cssavePath);
-		System.out.println(cssavePath);
+		// System.out.println(cssavePath);
 
-		new Window();
+		// new Window();
 
 		System.out.println(FileReader.decodeFile(cssavePath));
 		System.out.println(FileReader.getListOfSteamIDs(FileReader.decodeFile(cssavePath)));
@@ -31,6 +30,10 @@ public class Main {
 		System.out.println(
 				FileReader.getListofCalculatedIDs(FileReader.getListOfSteamIDs(FileReader.decodeFile(cssavePath))));
 
+		for (int i = 0; i <= 10; i++) {
+			System.out.println(FileReader.bestimmteSteamID64(i));
+		}
+	
 	}
 
 }

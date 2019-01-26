@@ -99,6 +99,26 @@ public class FileReader {
 		return output;
 	}
 
+	public static String bestimmteSteamID64(int pNummer) {
+		ArrayList<String> mainlist = new ArrayList<>();
+
+		mainlist = getListofCalculatedIDs(getListOfSteamIDs(decodeFile(getCSsave())));
+		String element = mainlist.get(pNummer);
+
+		return element;
+
+	}
+
+	public static String bestimmteSteamID(int pNummer) {
+		ArrayList<String> mainlist = new ArrayList<>();
+
+		mainlist = getListOfSteamIDs(decodeFile(getCSsave()));
+		String element = mainlist.get(pNummer);
+
+		return element;
+
+	}
+
 	public static ArrayList<String> readAndDeleteFile(String path) {
 		ArrayList<String> tmp = decodeFile(path);
 		File empty = new File(path);
